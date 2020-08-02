@@ -25,7 +25,12 @@ io.on('connection',socket=>{
         io.emit('message','A user has left the chat')
     })
 
+    socket.on('chatmessage',msg=>{
+        io.emit('message',msg)
+    })
+
 })
+
 
 const PORT=3000||process.env.PORT
 
